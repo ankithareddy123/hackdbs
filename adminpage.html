@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+<div class="container-fluid">
+<a class="navbar-brand">Admin</a>
+</div>
+</nav>
+<div style="margin-top: 20px; margin-left: 20px;">
+<button type="button" class="btn btn-primary btn-lg">Open Market</button>
+<button type="button" class="btn btn-danger btn-lg">Close Market</button>
+</div>
+<div style="margin-top: 20px; margin-left: 20px; width: 500px;">
+<select class="form-select" aria-label="Default select example">
+<option selected>DBS</option>
+<option value="1">Amazon</option>
+<option value="2">Netflix</option>
+</select>
+</div>
+<form style="margin-top: 20px;">
+<label for="fromDate" style="margin-left: 20px;">FromDate:</label>
+<input type="date" id="fromDate" name="fromDate">
+<label for="toDate" style="margin-left: 20px;">To Date:</label>
+<input type="date" id="toDate" name="toDate">
+</form>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Sno</th>
+<th scope="col">Stocks Name</th>
+<th scope="col">Order Qty</th>
+<th scope="col">Order Type</th>
+<th scope="col">Extended Qty</th>
+<th scope="col">Price</th>
+<th scope="col">Order Status</th>
+<th scope="col">Order Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+<td>DBS</td>
+<td>50</td>
+<td>Limit</td>
+<td>30</td>
+<td>150</td>
+<td>Accepted</td>
+<td>21 Feb</td>
+</tr>
+<tr>
+<th scope="row">2</th>
+<td>Amazon</td>
+<td>50</td>
+<td>Limit</td>
+<td>30</td>
+<td>150</td>
+<td>Accepted</td>
+<td>21 Feb</td>
+</tr>
+</tbody>
+</table>
+<div class="row">
+<div class="input-group" style="width: 300px;">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Execution Qty</span>
+</div>
+<input type="numbers" class="form-control" placeholder="Execution Qty" aria-label="Execution Qty" aria-describedby="basic-addon1">
+</div>
+<div class="input-group" style="width: 300px;">
+<div class="input-group-prepend">
+<span class="input-group-text" id="basic-addon1">Execution Price</span>
+</div>
+<input type="numbers" class="form-control" placeholder="Execution Price" aria-label="Execution Price" aria-describedby="basic-addon1">
+</div>
+<button type="button" class="btn btn-success" style="width: 300px;">Execute Orders</button>
+</div>
+</body>
+</html

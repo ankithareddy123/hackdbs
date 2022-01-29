@@ -1,0 +1,147 @@
+<! DOCTYPE html>  
+
+<html>  
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<meta charset="UTF-8">    
+<title> Online Room Book Form template Example </title>    
+ </head>  
+
+<style>  
+body {  
+  width: 500px;  
+  margin: 0 auto;  
+  padding: 50px;  
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(200,0,0,1));  
+
+}  
+div.elem-group {  
+  margin: 10px 0;  
+}  
+div.elem-group.inlined {  
+  width: 49%;  
+  display: inline-block;  
+  float: left;  
+  margin-left: 1%;  
+Show quoted text
+ color: #c6f5f8;  
+letter-spacing: -0.005em;  
+word-spacing: 1px;  
+font-size: 1.75em;  
+font-weight: bold;  
+  }  
+{  
+  border: 1px dotted #ccc;  
+}  
+button {  
+  height: 50px;  
+  background: orange;  
+  border: none;  
+  color: white;  
+  font-size: 1.25em;  
+  font-family: 'Nanum Gothic';  
+  border-radius: 4px;  
+  cursor: pointer;  
+}  
+button:hover {  
+  border: 2px solid black;  
+}  
+</style>  
+<body>  
+ <h2> Book order - Coustomer Screen </h2>  
+ <label>Choose a Stock</label>
+<form action="#" method="post">  
+  <div class="elem-group">  
+    <select name="Book" id="book">
+        <option value="dbs">DBS</option>
+
+        <option value="tcs">Infosys</option>
+        <option value="wipro">Tcs</option>
+       
+      </select>
+  </div>  
+   
+  <div class="elem-group inlined">  
+
+        <label for="ord">Choose your Order Type:</label>
+<br>
+
+        <input type="radio" id="limit" name="Lim" value="Limit" onclick="document.getElementById('pid').disabled=false">
+
+
+        <label for="limit">Limit</label>
+<br>
+
+        <input type="radio"  name="Lim" value="Market" onclick="document.getElementById('pid').disabled=true">
+
+
+        <label for="limit">Market</label>
+  </div>  
+
+   
+  <div class="elem-group inlined">  
+    <label for="checkout-date"> expected delivary-date </label>  
+
+    <input type="date" id="checkout-date" name="checkout" required>  
+  </div>  
+  <hr>
+  <br>
+
+  <p id="priceid">Price</p>
+
+  <div>
+
+    <input id="pid" type="number" name="Price" placeholder="0" >
+
+</div>
+  <P>Quantity</P>
+    <div>  
+
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+      </div>
+  <hr>
+<br>
+
+  <p id="priceid">Price</p>
+
+  <div>
+
+    <input id="pid" type="number" name="Price" placeholder="0" >
+
+</div>
+  <P>Quantity</P>
+    <div>  
+
+        <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+      </div>
+  <hr>  
+  <div class="elem-group">  
+    <label for="message"> description(optional) </label> 
+<br> 
+    <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important." required> </textarea>  
+  </div>  
+  <button type="submit"> PLACE MY ORDER </button>  
+</form>  
+<script>  
+var currentDateTime = new Date();  
+
+var year = currentDateTime.getFullYear();  
+var month = (currentDateTime.getMonth() + 1);  
+var date = (currentDateTime.getDate() + 1);  
+if(date < 10) {  
+  date = '0' + date;  
+}  
+if(month < 10) {  
+  month = '0' + month;  
+}  
+var dateTomorrow = year + "-" + month + "-" + date;  
+var checkinElem = document.querySelector("#checkin-date");  
+var checkoutElem = document.querySelector("#checkout-date");  
+checkinElem.setAttribute("min", dateTomorrow);  
+checkinElem.onchange = function () {  
+    checkoutElem.setAttribute("min", this.value);  
+}  
+</script>  
+</body>  
+</html>
